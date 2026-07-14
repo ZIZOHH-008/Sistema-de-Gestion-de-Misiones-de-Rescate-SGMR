@@ -6,7 +6,7 @@
 class Ambulancia : public Vehiculo {
 public:
     Ambulancia(const std::string& codigo, const std::string& nombre, int capacidadPacientes);  //Paso por referencias para evitar duplicar datos
-    ~Ambulancia();
+    ~Ambulancia() override;
 
     void ejecutarAccion() const override;
 };
