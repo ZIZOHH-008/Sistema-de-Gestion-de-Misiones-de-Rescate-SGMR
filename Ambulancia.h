@@ -1,0 +1,14 @@
+#ifndef AMBULANCIA_H
+#define AMBULANCIA_H
+
+#include "Vehiculo.h"
+
+class Ambulancia : public Vehiculo {
+public:
+    Ambulancia(const string& codigo, const string& nombre, int capacidadPacientes);  //Paso por referencias para evitar duplicar datos
+    ~Ambulancia();
+
+    void ejecutarAccion() const override;
+};
+
+#endif
