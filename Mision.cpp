@@ -56,6 +56,12 @@ bool Mision::asignarRecurso(Recurso* recurso) {
         return false;
     }
 
+    
+    if (recurso->getEstado()) {
+        return false;
+    }
+
+    
     if (cantidadRecursos == capacidadRecursos) {
         redimensionar();
     }
