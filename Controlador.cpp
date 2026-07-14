@@ -291,8 +291,98 @@ void Controlador::asignarRecursoAMision() {
         return;
     }
 
-    // Se pasa el mismo puntero 
+    // se usa el método por medio del puntero y se pasa el mismo puntero 
     mision->asignarRecurso(recurso);
     std::cout << "Recurso asignado con exito a la mision." << '\n';
 }
 
+
+
+
+
+void Controlador::ejecutarMisionMenu() {
+    if (cantidadMisiones == 0) {
+        std::cout << "\nNo hay misiones creadas." << '\n';
+        return;
+    }
+
+    std::cout << "\n\n=== Misiones disponibles ===" << '\n';
+    for (int i = 0; i < cantidadMisiones; i++) {
+        std::cout << "[" << i << "] ";
+        misiones[i]->mostrarInfo();
+    }
+
+    int indice;
+    std::cout << "Seleccione el indice de la mision a ejecutar: ";
+    std::cin >> indice;
+
+    Mision* mision = buscarMisionPorIndice(indice);
+    if (mision == nullptr) {
+        std::cout << "Indice invalido." << '\n';
+        return;
+    }
+
+    // El polimorfmos, en donde Mision.h recorre Recurso* y usa ejecutarAccion()
+    // Luego, según la clase y el método definido, sale en consola el resultado
+    mision->ejecutarMision();
+}
+
+
+
+
+
+//  Menú del sistema en general
+void Controlador::mostrarMenu() const {
+    std::cout << "\n\n\n========== SGMR - Sistema de Gestion de Misiones de Rescate ==========" << '\n';
+    std::cout << "1. Ver recursos" << '\n';
+    std::cout << "2. Registrar recurso" << '\n';
+    std::cout << "3. Crear mision" << '\n';
+    std::cout << "4. Asignar recurso a mision" << '\n';
+    std::cout << "5. Ejecutar mision" << '\n';
+    std::cout << "6. Salir" << '\n';
+    std::cout << "Seleccione una opcion: ";
+}
+
+
+
+
+
+void Controlador::iniciar() {
+    int opcion = 0;
+
+    do {
+        mostrarMenu();
+        std::cin >> opcion;
+
+        if (std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Entrada invalida, intente de nuevo." << '\n';
+            continue;
+        }
+
+        switch (opcion) {
+            case 1:
+                verRecursos();
+                break;
+            case 2:
+                registrarRecurso();
+                break;
+            case 3:
+                crearMision();
+                break;
+            case 4:
+                asignarRecursoAMision();
+                break;
+            case 5:
+                ejecutarMisionMenu();
+                break;
+            case 6:
+                std::cout << "Cerrando el sistema..." << '\n';
+                break;
+            default:
+                std::cout << "Opcion no valida." << '\n';
+        }
+
+    } while (opcion != 6);
+}
