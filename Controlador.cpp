@@ -99,3 +99,48 @@ void Controlador::agregarMisionSistema(Mision* mision) {
     misiones[cantidadMisiones] = mision;
     cantidadMisiones++;
 }
+
+
+
+void Controlador::cargarDatosPrueba() {
+    //Ambulancias
+    agregarRecursoInventario(new Ambulancia("AMB-01", "Ambulancia Alfa", 2));
+    agregarRecursoInventario(new Ambulancia("AMB-02", "Ambulancia Beta", 2));
+
+    //Helicopteros
+    agregarRecursoInventario(new Helicoptero("HEL-01", "Helicoptero Condor", 4));
+
+    //Medicos
+    agregarRecursoInventario(new Medico("MED-01", "Dra. Camila Rios", "Trauma"));
+    agregarRecursoInventario(new Medico("MED-02", "Dr. Andres Lopez", "Urgencias"));
+
+    //Rescatistas
+    agregarRecursoInventario(new Rescatista("RES-01", "Juan Herrera", "Estructuras colapsadas"));
+    agregarRecursoInventario(new Rescatista("RES-02", "Laura Gomez", "Rescate acuatico"));
+
+    //Misiones
+    agregarMisionSistema(new Mision("MIS-01", "Deslizamiento Cali Sur", "Cali - Valle del Cauca"));
+    agregarMisionSistema(new Mision("MIS-02", "Inundacion Palmira", "Palmira - Valle del Cauca"));
+}
+
+
+
+//Al ser índice, retorna un puntero
+Recurso* Controlador::buscarRecursoPorIndice(int indice) const {
+    if (indice < 0 || indice >= cantidadRecursos) {
+        return nullptr;
+    }
+    return inventarioRecursos[indice];
+}
+
+
+
+//Al ser índice, retorna un puntero
+Mision* Controlador::buscarMisionPorIndice(int indice) const {
+    if (indice < 0 || indice >= cantidadMisiones) {
+        return nullptr;
+    }
+    return misiones[indice];
+}
+
+
