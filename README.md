@@ -6,7 +6,9 @@ Para que se vea limpia la ejecución, creé una carpeta llamada "output" en dond
 (Como estoy en linux, no puedo ejecutar el .exe directamente y me toca por consola).
 
 El comando que usé es: 
+
 g++ main.cpp Controlador.cpp Mision.cpp Recurso.cpp Vehiculo.cpp Ambulancia.cpp Helicoptero.cpp Personal.cpp Medico.cpp Rescatista.cpp -o output/main ./output/main
+
 
 Así se ejecuta archivo por archivo de los .cpp.
 
