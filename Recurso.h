@@ -19,8 +19,8 @@ public:
     // Cada clase modifica como quiera este método
     virtual void mostrarInfo() const;
 
-    string getCodigo() const;
-    string getNombre() const;
+    std::string getCodigo() const;
+    std::string getNombre() const;
 };
 
 #endif
