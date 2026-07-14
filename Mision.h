@@ -22,7 +22,7 @@ public:
     Mision(const std::string& codigo, const std::string& nombre, const std::string& zonaAfectada);
     ~Mision(); // Solo libera el arreglo de punteros, no los objetos apuntados (pq no es dueña de los recursos)
  
-    void asignarRecurso(Recurso* recurso);
+    bool asignarRecurso(Recurso* recurso);
 
     void ejecutarMision() const;
 
