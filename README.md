@@ -1,6 +1,6 @@
-By Juan Manuel Parra Prado
+// By Juan Manuel Parra Prado
 
-PARA EJECUTARLO 
+# PARA EJECUTARLO 
 Yo usé VSCode en linux
 Para que se vea limpia la ejecución, creé una carpeta llamada "output" en donde se aloja el main.exe 
 (Como estoy en linux, no puedo ejecutar el .exe directamente y me toca por consola)
