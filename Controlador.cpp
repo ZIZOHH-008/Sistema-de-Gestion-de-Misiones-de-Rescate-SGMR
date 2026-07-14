@@ -223,7 +223,7 @@ void Controlador::registrarRecurso() {
             return;
     }
 
-    agregarRecursoInventario(nuevo);
+    agregarRecursoInventario(nuevo); //El objeto "nuevo" se guarda con esta funcion
     std::cout << "Recurso registrado con exito" << '\n';
 }
 
