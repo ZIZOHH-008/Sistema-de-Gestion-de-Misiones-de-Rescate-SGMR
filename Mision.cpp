@@ -76,7 +76,7 @@ void Mision::ejecutarMision() const {
     }
 
     for (int i = 0; i < cantidadRecursos; i++) {
-        recursosAsignados[i]->ejecutarAccion();
+        recursosAsignados[i]->ejecutarAccion(); //Dependiendo del recurso, ejecuta el método con su modificación
     }
 }
 
