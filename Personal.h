@@ -5,15 +5,15 @@
 
 class Personal : public Recurso {
 protected:
-    string especialidad;
+    std::string especialidad;
 
 public:
-    Personal(const string& codigo, const string& nombre, const string& especialidad);
+    Personal(const std::string& codigo, const std::string& nombre, const std::string& especialidad);
     virtual ~Personal();
 
-    string getEspecialidad() const;
+    std::string getEspecialidad() const;
 
-    void mostrarInfo() const override;  //
+    void mostrarInfo() const override;
 };
 
 #endif
