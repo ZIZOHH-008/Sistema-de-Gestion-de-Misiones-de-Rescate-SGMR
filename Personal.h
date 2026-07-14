@@ -9,7 +9,7 @@ protected:
 
 public:
     Personal(const std::string& codigo, const std::string& nombre, const std::string& especialidad);
-    virtual ~Personal();
+    ~Personal() override;
 
     std::string getEspecialidad() const;
 
