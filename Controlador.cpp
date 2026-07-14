@@ -144,3 +144,155 @@ Mision* Controlador::buscarMisionPorIndice(int indice) const {
 }
 
 
+
+
+void Controlador::verRecursos() const {
+    std::cout << "\n\n=== Inventario de recursos (" << cantidadRecursos << ") ===" << '\n';
+    if (cantidadRecursos == 0) {
+        std::cout << "No hay recursos registrados." << '\n';
+        return;
+    }
+    for (int i = 0; i < cantidadRecursos; i++) {
+        std::cout << "[" << i << "] ";
+        inventarioRecursos[i]->mostrarInfo();
+        std::cout << '\n';
+    }
+}
+
+
+
+
+
+void Controlador::registrarRecurso() {
+    std::cout << "\n\n=== Registrar nuevo recurso ===" << '\n';
+    std::cout << "1. Ambulancia\n2. Helicoptero\n3. Medico\n4. Rescatista\nOpcion: ";
+
+    int tipo;
+    std::cin >> tipo;
+
+    if (std::cin.fail()) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Opcion invalida." << '\n';
+        return;
+    }
+
+    std::string codigo, nombre, dato;
+    std::cout << "Codigo (placa o ID unico): ";
+    std::cin >> codigo;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+    std::cout << "Nombre: ";
+    std::getline(std::cin, nombre);
+
+
+    //La variable puntero que se almacenará en el arreglo de punteros
+    Recurso* nuevo = nullptr;
+
+    switch (tipo) {
+        case 1: {
+            int capacidad;
+            std::cout << "Capacidad de pacientes: ";
+            std::cin >> capacidad;
+            nuevo = new Ambulancia(codigo, nombre, capacidad);
+            break;
+        }
+        case 2: {
+            int capacidad;
+            std::cout << "Capacidad de pacientes: ";
+            std::cin >> capacidad;
+            nuevo = new Helicoptero(codigo, nombre, capacidad);
+            break;
+        }
+        case 3: {
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Especialidad: ";
+            std::getline(std::cin, dato);
+            nuevo = new Medico(codigo, nombre, dato);
+            break;
+        }
+        case 4: {
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Especialidad / tipo de rescate: ";
+            std::getline(std::cin, dato);
+            nuevo = new Rescatista(codigo, nombre, dato);
+            break;
+        }
+        default:
+            std::cout << "Tipo de recurso invalido" << '\n';
+            return;
+    }
+
+    agregarRecursoInventario(nuevo);
+    std::cout << "Recurso registrado con exito" << '\n';
+}
+
+
+
+
+
+void Controlador::crearMision() {
+    std::cout << "\n\n=== Crear nueva mision ===" << '\n';
+
+    std::string codigo, nombre, zona;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+    std::cout << "Codigo de la mision: ";
+    std::getline(std::cin, codigo);
+    std::cout << "Nombre de la mision: ";
+    std::getline(std::cin, nombre);
+    std::cout << "Zona afectada: ";
+    std::getline(std::cin, zona);
+
+    Mision* nueva = new Mision(codigo, nombre, zona);
+    agregarMisionSistema(nueva);
+
+    std::cout << "Mision creada con exito" << '\n';
+}
+
+
+
+
+
+void Controlador::asignarRecursoAMision() {
+    if (cantidadMisiones == 0) {
+        std::cout << "\nNo hay misiones creadas. Cree una mision primero" << '\n';
+        return;
+    }
+    if (cantidadRecursos == 0) {
+        std::cout << "\nNo hay recursos en el inventario. Registre uno primero" << '\n';
+        return;
+    }
+
+    std::cout << "\n\n=== Misiones disponibles ===" << '\n';
+    for (int i = 0; i < cantidadMisiones; i++) {
+        std::cout << "[" << i << "] ";
+        misiones[i]->mostrarInfo();
+    }
+
+    int indiceMision;
+    std::cout << "Seleccione el indice de la mision: ";
+    std::cin >> indiceMision;
+
+    Mision* mision = buscarMisionPorIndice(indiceMision);
+    if (mision == nullptr) {
+        std::cout << "Indice de mision invalido." << '\n';
+        return;
+    }
+
+    verRecursos();
+    int indiceRecurso;
+    std::cout << "Seleccione el indice del recurso a asignar: ";
+    std::cin >> indiceRecurso;
+
+    Recurso* recurso = buscarRecursoPorIndice(indiceRecurso);
+    if (recurso == nullptr) {
+        std::cout << "Indice de recurso invalido." << '\n';
+        return;
+    }
+
+    // Se pasa el mismo puntero 
+    mision->asignarRecurso(recurso);
+    std::cout << "Recurso asignado con exito a la mision." << '\n';
+}
+
