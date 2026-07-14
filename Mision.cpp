@@ -23,8 +23,17 @@ Mision::~Mision() {
 
 
 
-// Duplica la capacidad del arreglo cuando se llena, copiando los
-// punteros existentes a un nuevo bloque de memoria en el Heap
+
+/*
+En Mision.cpp hay un Método similar, pero ese borra y crea un arreglo para los "recursosAsignados"
+Eso es un atributo privado, no se debe tocar desde otra clase
+*/
+
+/*
+Duplica la capacidad del arreglo cuando se llena, copiando los punteros existentes 
+a un nuevo bloque de memoria en el Heap
+*/
+
 void Mision::redimensionar() {
     int nuevaCapacidad = capacidadRecursos * 2;
     Recurso** nuevoArreglo = new Recurso*[nuevaCapacidad];
