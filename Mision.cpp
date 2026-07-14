@@ -25,7 +25,7 @@ Mision::~Mision() {
 
 
 /*
-En Mision.cpp hay un Método similar, pero ese borra y crea un arreglo para los "recursosAsignados"
+En Controlador.cpp hay un Método similar, pero ese borra y crea un arreglo para el inventario de recursos y misiones
 Eso es un atributo privado, no se debe tocar desde otra clase
 */
 
