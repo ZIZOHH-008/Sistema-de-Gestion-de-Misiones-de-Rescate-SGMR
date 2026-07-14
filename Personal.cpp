@@ -1,15 +1,21 @@
-#include "Medico.h"
+#include "Personal.h"
 #include <iostream>
 
 
 
-Medico::Medico(const std::string& codigo, const std::string& nombre, const std::string& especialidad)
-    : Personal(codigo, nombre, especialidad) {
+Personal::Personal(const std::string& codigo, const std::string& nombre, const std::string& especialidad)
+    : Recurso(codigo, nombre) {
+    this->especialidad = especialidad;
 }
 
-Medico::~Medico() {
+Personal::~Personal() {
 }
 
-void Medico::ejecutarAccion() const {
-    std::cout << "[Medico " << codigo << "] Estabilizando signos vitales\n";
+std::string Personal::getEspecialidad() const {
+    return especialidad;
+}
+
+void Personal::mostrarInfo() const {
+    Recurso::mostrarInfo();
+    std::cout << " | Especialidad: " << especialidad;
 }
