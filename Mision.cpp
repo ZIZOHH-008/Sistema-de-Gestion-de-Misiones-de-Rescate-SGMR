@@ -51,7 +51,7 @@ void Mision::redimensionar() {
 
 
 
-void Mision::asignarRecurso(Recurso* recurso) {
+bool Mision::asignarRecurso(Recurso* recurso) {
     if (recurso == nullptr) {
         return;
     }
@@ -62,6 +62,9 @@ void Mision::asignarRecurso(Recurso* recurso) {
 
     recursosAsignados[cantidadRecursos] = recurso;
     cantidadRecursos++;
+
+    recurso->setEstado(true);  // Aquí vuelve ocupado == True del objeto punteado
+    return true;
 }
 
 
