@@ -10,7 +10,7 @@ protected:
 
 public:
     Vehiculo(const std::string& codigo, const std::string& nombre, int capacidadPacientes);
-    virtual ~Vehiculo();
+    ~Vehiculo() override;
 
     int getCapacidadPacientes() const;
 
