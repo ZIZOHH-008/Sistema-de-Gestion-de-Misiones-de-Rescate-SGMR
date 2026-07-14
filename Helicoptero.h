@@ -7,7 +7,7 @@
 class Helicoptero : public Vehiculo {
 public:
     Helicoptero(const std::string& codigo, const std::string& nombre, int capacidadPacientes);
-    ~Helicoptero();
+    ~Helicoptero() override;
 
     void ejecutarAccion() const override;
 };
