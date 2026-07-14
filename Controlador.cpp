@@ -280,27 +280,33 @@ void Controlador::asignarRecursoAMision() {
         return;
     }
 
-    verRecursos();
-    int indiceRecurso;
-    std::cout << "Seleccione el indice del recurso a asignar: ";
-    std::cin >> indiceRecurso;
-
-    Recurso* recurso = buscarRecursoPorIndice(indiceRecurso);
-    if (recurso == nullptr) {
-        std::cout << "Indice de recurso invalido." << '\n';
-        return;
-    }
-
+    char opcion{};
+    do {
+        verRecursos();
+        int indiceRecurso;
+        std::cout << "Seleccione el indice del recurso a asignar: ";
+        std::cin >> indiceRecurso;
     
-    // se usa el método por medio del puntero y se pasa el mismo puntero
-    bool exito = mision->asignarRecurso(recurso);
+        Recurso* recurso = buscarRecursoPorIndice(indiceRecurso);
+        if (recurso == nullptr) {
+            std::cout << "Indice de recurso invalido." << '\n';
+            return;
+        }
+    
+        
+        // se usa el método por medio del puntero y se pasa el mismo puntero
+        bool exito = mision->asignarRecurso(recurso);
+    
+        if (exito) {
+            std::cout << "Recurso asignado con exito a la mision\n";
+        }
+        else {
+            std::cout << "Este recurso ya esta ocupado en otra mision. No se puede asignar\n";
+        }
 
-    if (exito) {
-        std::cout << "Recurso asignado con exito a la mision\n";
-    }
-    else {
-        std::cout << "Este recurso ya esta ocupado en otra mision. No se puede asignar\n";
-    }
+        std::cout << "\n¿Desea agregar otro recurso? (S/N): ";
+        std::cin >> opcion;
+    } while (opcion == 'S' || opcion == 's');
 }
 
 
