@@ -9,7 +9,7 @@ protected:
     int capacidadPacientes;
 
 public:
-    Vehiculo(const string& codigo, const string& nombre, int capacidadPacientes);
+    Vehiculo(const std::string& codigo, const std::string& nombre, int capacidadPacientes);
     virtual ~Vehiculo();
 
     int getCapacidadPacientes() const;
