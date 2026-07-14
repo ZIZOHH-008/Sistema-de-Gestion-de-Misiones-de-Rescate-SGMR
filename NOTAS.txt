@@ -1,0 +1,5 @@
+
+- Puedo asignar el mismo recurso varias veces a una mision o varias misiones
+- Solo puedo asignar Recurso por Recurso. ¿Como hago para elegir varios a la vez para una mision?
+
+- Revisar que tenga todos los requi. funcionales y de arquitectura (de manejo de memoria)
