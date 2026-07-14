@@ -7,7 +7,7 @@
 
 class Rescatista : public Personal {
 public:
-    Rescatista(const string& codigo, const string& nombre, const string& especialidad);
+    Rescatista(const std::string& codigo, const std::string& nombre, const std::string& especialidad);
     ~Rescatista();
 
     void ejecutarAccion() const override;
