@@ -13,7 +13,7 @@ public:
     Recurso(const std::string& codigo, const std::string& nombre);
     virtual ~Recurso();
 
-    // Este método todos los deben tener, es como un contrato
+    // Este método todas las clases NO abstractas lo deben tener, es como un contrato
     virtual void ejecutarAccion() const = 0;
 
     // Cada clase modifica como quiera este método
