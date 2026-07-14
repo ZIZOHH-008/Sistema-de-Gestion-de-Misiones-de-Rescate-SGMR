@@ -53,7 +53,7 @@ void Mision::redimensionar() {
 
 bool Mision::asignarRecurso(Recurso* recurso) {
     if (recurso == nullptr) {
-        return;
+        return false;
     }
 
     if (cantidadRecursos == capacidadRecursos) {
