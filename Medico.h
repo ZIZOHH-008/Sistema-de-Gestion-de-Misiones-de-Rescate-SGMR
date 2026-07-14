@@ -8,7 +8,7 @@
 class Medico : public Personal {
 public:
     Medico(const std::string& codigo, const std::string& nombre, const std::string& especialidad);
-    ~Medico();
+    ~Medico() override;
 
     void ejecutarAccion() const override;
 };
