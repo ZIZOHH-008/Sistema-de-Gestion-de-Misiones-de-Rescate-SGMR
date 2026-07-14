@@ -297,7 +297,8 @@ void Controlador::asignarRecursoAMision() {
 
     if (exito) {
         std::cout << "Recurso asignado con exito a la mision\n";
-    } else {
+    }
+    else {
         std::cout << "Este recurso ya esta ocupado en otra mision. No se puede asignar\n";
     }
 }
