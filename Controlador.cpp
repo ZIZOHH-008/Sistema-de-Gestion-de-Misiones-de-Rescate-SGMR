@@ -291,9 +291,15 @@ void Controlador::asignarRecursoAMision() {
         return;
     }
 
-    // se usa el método por medio del puntero y se pasa el mismo puntero 
-    mision->asignarRecurso(recurso);
-    std::cout << "Recurso asignado con exito a la mision." << '\n';
+    
+    // se usa el método por medio del puntero y se pasa el mismo puntero
+    bool exito = mision->asignarRecurso(recurso);
+
+    if (exito) {
+        std::cout << "Recurso asignado con exito a la mision\n";
+    } else {
+        std::cout << "Este recurso ya esta ocupado en otra mision. No se puede asignar\n";
+    }
 }
 
 
