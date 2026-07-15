@@ -12,4 +12,4 @@ g++ main.cpp Controlador.cpp Mision.cpp Recurso.cpp Vehiculo.cpp Ambulancia.cpp 
 
 Así se ejecuta archivo por archivo de los .cpp.
 
-IMPORTANTE: En tal caso no logre correrlo en VSCode, adjunté una carpeta con el MISMO proyecto pero en CodeBlocks
+_IMPORTANTE:_ En tal caso no logre correrlo en VSCode, adjunté una carpeta con el MISMO proyecto pero en CodeBlocks
