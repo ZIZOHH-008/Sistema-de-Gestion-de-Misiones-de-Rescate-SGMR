@@ -304,8 +304,18 @@ void Controlador::asignarRecursoAMision() {
             std::cout << "Este recurso ya esta ocupado en otra mision. No se puede asignar\n";
         }
 
-        std::cout << "\n¿Desea agregar otro recurso? (S/N): ";
-        std::cin >> opcion;
+        
+        do {
+            std::cout << "\n¿Desea agregar otro recurso? (S/N): ";
+            std::cin >> opcion;
+
+            if (opcion != 'S' && opcion != 's' && opcion != 'N' && opcion != 'n') {
+                std::cout << "Opcion invalida. Intente nuevamente.\n";
+            }
+
+        } while (opcion != 'S' && opcion != 's' &&
+                opcion != 'N' && opcion != 'n');
+        
     } while (opcion == 'S' || opcion == 's');
 }
 
