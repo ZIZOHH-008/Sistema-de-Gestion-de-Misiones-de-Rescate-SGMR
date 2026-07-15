@@ -1,0 +1,71 @@
+# depslib dependency file v1.0
+1784035574 source:/home/zizohh/Desktop/FINALOPP_codeblock/SGMR/src/Ambulancia.cpp
+	"Ambulancia.h"
+	<iostream>
+
+1784072432 /home/zizohh/Desktop/FINALOPP_codeblock/SGMR/include/Ambulancia.h
+	"Vehiculo.h"
+
+1784072855 /home/zizohh/Desktop/FINALOPP_codeblock/SGMR/include/Vehiculo.h
+	"Recurso.h"
+
+1784072820 /home/zizohh/Desktop/FINALOPP_codeblock/SGMR/include/Recurso.h
+	<string>
+
+1784075122 source:/home/zizohh/Desktop/FINALOPP_codeblock/SGMR/src/Controlador.cpp
+	"Controlador.h"
+	"Ambulancia.h"
+	"Helicoptero.h"
+	"Medico.h"
+	"Rescatista.h"
+	<iostream>
+	<limits>
+
+1784003304 /home/zizohh/Desktop/FINALOPP_codeblock/SGMR/include/Controlador.h
+	"Recurso.h"
+	"Mision.h"
+
+1784065498 /home/zizohh/Desktop/FINALOPP_codeblock/SGMR/include/Mision.h
+	<string>
+	"Recurso.h"
+
+1784072043 /home/zizohh/Desktop/FINALOPP_codeblock/SGMR/include/Helicoptero.h
+	"Vehiculo.h"
+
+1784071924 /home/zizohh/Desktop/FINALOPP_codeblock/SGMR/include/Medico.h
+	"Personal.h"
+
+1784072837 /home/zizohh/Desktop/FINALOPP_codeblock/SGMR/include/Personal.h
+	"Recurso.h"
+
+1784071777 /home/zizohh/Desktop/FINALOPP_codeblock/SGMR/include/Rescatista.h
+	"Personal.h"
+
+1784035775 source:/home/zizohh/Desktop/FINALOPP_codeblock/SGMR/src/Helicoptero.cpp
+	"Helicoptero.h"
+	<iostream>
+
+1784035927 source:/home/zizohh/Desktop/FINALOPP_codeblock/SGMR/src/Medico.cpp
+	"Medico.h"
+	<iostream>
+
+1784075031 source:/home/zizohh/Desktop/FINALOPP_codeblock/SGMR/src/Mision.cpp
+	"Mision.h"
+	<iostream>
+
+1784035881 source:/home/zizohh/Desktop/FINALOPP_codeblock/SGMR/src/Personal.cpp
+	"Personal.h"
+	<iostream>
+
+1784065403 source:/home/zizohh/Desktop/FINALOPP_codeblock/SGMR/src/Recurso.cpp
+	"Recurso.h"
+	<iostream>
+
+1784035902 source:/home/zizohh/Desktop/FINALOPP_codeblock/SGMR/src/Rescatista.cpp
+	"Rescatista.h"
+	<iostream>
+
+1784035479 source:/home/zizohh/Desktop/FINALOPP_codeblock/SGMR/src/Vehiculo.cpp
+	"Vehiculo.h"
+	<iostream>
+
